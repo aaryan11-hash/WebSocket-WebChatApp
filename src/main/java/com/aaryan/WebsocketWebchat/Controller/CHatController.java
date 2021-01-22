@@ -6,6 +6,7 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class CHatController {
@@ -21,6 +22,11 @@ public class CHatController {
     public ChatMessage newUser(@Payload final ChatMessage chatMessage, SimpMessageHeaderAccessor headerAccessor){
         headerAccessor.getSessionAttributes().put("username",chatMessage.getSender());
         return chatMessage;
+    }
+
+    @GetMapping("/eleven")
+    public String geteleven(){
+        return "hi";
     }
 
 
