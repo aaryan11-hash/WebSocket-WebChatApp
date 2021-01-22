@@ -24,10 +24,7 @@ public class CHatController {
         return chatMessage;
     }
 
-    @GetMapping("/eleven")
-    public String geteleven(){
-        return "hi";
-    }
+
 
 
 }
